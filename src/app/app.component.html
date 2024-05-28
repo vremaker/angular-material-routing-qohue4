@@ -1,0 +1,16 @@
+<mat-toolbar color="primary" class="col-12 container">
+  <nav mat-tab-nav-bar>
+    <button
+      mat-tab-link
+      *ngFor="let tabItem of knownRoutes"
+      mat-raised-button
+      (click)="activeLink = tabItem.path"
+      [routerLink]="[tabItem.path]"
+      [matTooltip]="tabItem.data.tabHint"
+      routerLinkActive="active-link"
+    >
+      {{ tabItem.data.tabName }}
+    </button>
+  </nav>
+</mat-toolbar>
+<router-outlet></router-outlet>
